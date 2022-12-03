@@ -1,0 +1,130 @@
+/**=====================
+     17. List CSS Start
+==========================**/
+.ui-list {
+  .list-group-flush.list-group {
+    .list-group-item {
+      border-width: 0 0 1px;
+    }
+  }
+  .list-group {
+	$list-name:primary,
+	secondary,
+	success,
+	danger,
+	warning,
+	info,
+	light,
+	dark;
+	  $bg-color-1: #cfe2ff;
+	  $bg-color-2: #e2e3e5;
+	  $bg-color-3: #d1e7dd;
+	  $bg-color-4: #f8d7da;
+	  $bg-color-5: #fff3cd;
+	  $bg-color-6: #cff4fc;
+	  $bg-color-7: #fefefe;
+	  $bg-color-8: #d3d3d4;
+	  $color-1: #084298;
+	  $color-2: #41464b;
+	  $color-3: #0f5132;
+	  $color-4: #842029;
+	  $color-5: #664d03;
+	  $color-6: #055160;
+	  $color-7: #636464;
+	  $color-8: #141619;
+		@each $list-name,
+		$list-color in (primary, $color-1),
+		(secondary, $color-2),
+		(success, $color-3),
+		(danger, $color-4),
+		(info, $color-6),
+		(light, $color-7),
+		(dark, $color-8),
+		(warning, $color-5) {
+			.list-group-item-#{$list-name}.list-group-item {
+				color: $list-color !important;
+			}
+		}
+		@each $list-name,
+		$list-color in (primary, $bg-color-1),
+		(secondary, $bg-color-2),
+		(success, $bg-color-3),
+		(danger, $bg-color-4),
+		(info, $bg-color-6),
+		(light, $bg-color-7),
+		(dark, $bg-color-8),
+		(warning, $bg-color-5) {
+			.list-group-item-#{$list-name}.list-group-item {
+				background-color: $list-color;
+			}
+		}
+		img{
+			width: 40px;
+			height: 40px;
+		}
+    .list-group-item {
+      background-color: $white;
+      border: 1px solid rgba($black, 0.125);
+      color: $theme-body-font-color;
+      display: block;
+      padding: 0.5rem 1rem;
+      position: relative;
+      text-decoration: none;
+      &.active {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        color: $white;
+      }
+      + .list-group-item {
+        border-top: 0;
+      }
+    }
+  }
+}
+.list-group-item.active {
+  background-color: var(--theme-deafult);
+  border-color: var(--theme-deafult);
+}
+.list-group {
+  i {
+    margin-right: $list-group-margin;
+  }
+  img {
+    height: 40px;
+    width: 40px;
+    margin-right: $list-group-margin;
+  }
+  .list-group-item-action {
+    i {
+      vertical-align: middle;
+    }
+  }
+}
+
+.tab-javascript {
+  ul {
+    &.list-group {
+      .list-group-item {
+        border-radius: 0;
+        border-top: none;
+        cursor: pointer;
+      }
+      &:first-child {
+        .list-group-item {
+          border-top: 1px solid rgba($black, 0.125);
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+      }
+      &:last-child {
+        .list-group-item {
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+    }
+  }
+}
+/**=====================
+     17. List CSS Ends
+==========================**/
